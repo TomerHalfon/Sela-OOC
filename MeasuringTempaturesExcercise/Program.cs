@@ -1,4 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
 
 namespace MeasuringTempaturesExcercise
 {
@@ -49,7 +54,21 @@ namespace MeasuringTempaturesExcercise
             //call the second static method
             Console.WriteLine(SecondFunc(avgDegree));
 
-            
+
+            //if time permits:
+
+            //ConsoleColor Enum
+            ConsoleColor currentColor = Console.ForegroundColor;
+
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Im Red... :)");
+
+            Console.ForegroundColor = currentColor;
+            Console.WriteLine("now im not... :(");
+
+            //MessageBox
+            MessageBox.Show($"This temperature was measured Today: {DateTime.Now.ToString()}");
+
         }
     }
 }
