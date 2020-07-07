@@ -4,6 +4,18 @@ namespace FactorialExercise
 {
     class Program
     {
+        //calculate factorial with a recursive function
+        static long FactorialRec(long num)
+        {
+            //recursive end point
+            if (num<=1)
+            {
+                return 1;
+            }
+
+            return num * FactorialRec(num - 1);
+        }
+
         //calculate factorial
         static long Factorial(long num)
         {
@@ -28,7 +40,13 @@ namespace FactorialExercise
                 //if it's a valid number
                 if (long.TryParse(inputString, out long inputNum))
                 {
+                    //regular factorial function
                     long res = Factorial(inputNum);
+
+                    //recursive factorial function
+                    //long res = FactorialRec(inputNum);
+
+                    //print resualt
                     Console.WriteLine($"The Factorial of { inputString } is { res }");
                 }
             }
