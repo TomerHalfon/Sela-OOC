@@ -11,9 +11,9 @@ namespace OOAnimals.Structs
     public struct Position
     {
         //X position
-        public int X { get; set; }
+        public int X;
         //Y poition
-        public int Y { get; set; }
+        public int Y;
 
         //constructor with parameters
         public Position(int x, int y)
@@ -21,19 +21,23 @@ namespace OOAnimals.Structs
             X = x;
             Y = y;
         }
-
-        //updates the parameters of the position (X and Y) based on individual deltas
-        public void Move(int deltaX, int deltaY)
+        
+        //print data
+        public override string ToString()
         {
-            X += deltaX;
-            Y += deltaY;
+            return $"({X},{Y})";
         }
 
-        //updates the parameters of the position (X and Y) based on a shared delata
-        public void Move(int delta)
+        //returns a new position (X and Y) based on individual deltas
+        public Position Move(int deltaX, int deltaY)
         {
-            X += delta;
-            Y += delta;
+            return new Position(X+deltaX, Y+deltaY);
+        }
+
+        //returns a new position (X and Y) based on a shared delata
+        public Position Move(int delta)
+        {
+            return new Position(X + delta, Y + delta);
         }
     }
 }

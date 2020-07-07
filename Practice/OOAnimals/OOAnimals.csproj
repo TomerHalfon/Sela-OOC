@@ -32,6 +32,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -43,7 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Animals\Animals.cs" />
+    <Compile Include="Classes\Animals\Animal.cs" />
+    <Compile Include="Classes\Animals\Mammals\Dolphin.cs" />
+    <Compile Include="Classes\Animals\Mammals\Human.cs" />
+    <Compile Include="Classes\Animals\Mammals\Mammal.cs" />
     <Compile Include="Enums\Gender.cs" />
     <Compile Include="Structs\Position.cs" />
     <Compile Include="Program.cs" />
