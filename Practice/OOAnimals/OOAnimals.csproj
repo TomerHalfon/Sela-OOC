@@ -44,8 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Animals\Animals.cs" />
-    <Compile Include="Classes\Enums.cs" />
-    <Compile Include="Classes\Structs.cs" />
+    <Compile Include="Enums\Gender.cs" />
+    <Compile Include="Structs\Position.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
