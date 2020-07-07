@@ -43,7 +43,7 @@ namespace FactorialExercise
                     //regular factorial function
                     long res = Factorial(inputNum);
 
-                    //recursive factorial function
+                    ////recursive factorial function
                     //long res = FactorialRec(inputNum);
 
                     //print resualt
