@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockPaperScissorsGame", "Ho
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatingTheDigitsOfOddNumbers", "HomeWork\CalculatingTheDigitsOfOddNumbers\CalculatingTheDigitsOfOddNumbers.csproj", "{532A3CCD-43D4-4E5B-9E68-F0ADB8CBC597}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Practice", "Practice", "{63710FF2-33FD-42AD-B5DA-5112C5E03343}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOAnimals", "Practice\OOAnimals\OOAnimals.csproj", "{2863F8DF-62C2-424D-B9D9-C7D749EAF5CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +47,10 @@ Global
 		{532A3CCD-43D4-4E5B-9E68-F0ADB8CBC597}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{532A3CCD-43D4-4E5B-9E68-F0ADB8CBC597}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{532A3CCD-43D4-4E5B-9E68-F0ADB8CBC597}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2863F8DF-62C2-424D-B9D9-C7D749EAF5CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2863F8DF-62C2-424D-B9D9-C7D749EAF5CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2863F8DF-62C2-424D-B9D9-C7D749EAF5CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2863F8DF-62C2-424D-B9D9-C7D749EAF5CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +61,7 @@ Global
 		{A7A3004F-B55E-43BB-9B9C-327A1CA9A799} = {2EF54483-40CD-4F37-9731-A2B2545521BD}
 		{B6D2F333-C22E-4AC5-89C7-C5D27E3AC63C} = {2EF54483-40CD-4F37-9731-A2B2545521BD}
 		{532A3CCD-43D4-4E5B-9E68-F0ADB8CBC597} = {2EF54483-40CD-4F37-9731-A2B2545521BD}
+		{2863F8DF-62C2-424D-B9D9-C7D749EAF5CC} = {63710FF2-33FD-42AD-B5DA-5112C5E03343}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9B659EE0-8295-4F2C-993B-B01FD2B56752}
