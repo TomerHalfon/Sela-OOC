@@ -26,7 +26,7 @@ namespace FactorialExercise
             return sum;
         }
 
-        static void Main(string[] args)
+        static void Main()
         {
             string inputString = "";
             //run as long as the input is stop

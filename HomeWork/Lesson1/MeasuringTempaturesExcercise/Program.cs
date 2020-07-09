@@ -32,7 +32,7 @@ namespace MeasuringTempaturesExcercise
             return $"The tempeture is {degree} and it's {res}";
         }
 
-        static void Main(string[] args)
+        static void Main()
         {
             //take in the values
             Console.Write("Please enter the first temperature: ");

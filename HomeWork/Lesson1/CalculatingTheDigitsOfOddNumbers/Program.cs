@@ -22,7 +22,7 @@ namespace CalculatingTheDigitsOfOddNumbers
             }
             return sum;
         }
-        static void Main(string[] args)
+        static void Main()
         {
             string inputString = "Y";
             int inputNum;

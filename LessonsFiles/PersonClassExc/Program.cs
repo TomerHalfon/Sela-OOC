@@ -4,7 +4,7 @@ namespace PersonClassExc
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             //person use
             Person perosn = new Person("Tomer", 27);

@@ -5,7 +5,7 @@ namespace StringFormating
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             //culture and formating
             //create a us culture

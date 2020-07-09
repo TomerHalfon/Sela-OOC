@@ -42,7 +42,7 @@ namespace RockPaperScissorsGame
             return res;
         }
 
-        static void Main(string[] args)
+        static void Main()
         {
             string inputString;
             string computerSelection;
