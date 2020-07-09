@@ -38,6 +38,8 @@ namespace OOAnimals.Classes.Animals
 
         //move the animal based on her speed
         public abstract void Move(int deltaX, int deltaY);
+
+        //describe how the animal is moving
         public abstract string WayOfMoving();
 
         public override string ToString()

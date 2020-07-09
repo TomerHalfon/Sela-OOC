@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace OOAnimals.Classes.Animals.Mammals
 {
+    //the base class for all mammlals
     public abstract class Mammal : Animal
     {
         //how long it takes the give birth (in months)
