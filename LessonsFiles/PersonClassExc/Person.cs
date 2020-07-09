@@ -16,5 +16,15 @@ namespace PersonClassExc
         {
             return $"Name: {Name}, Age: {Age}";
         }
+        public override bool Equals(object obj)
+        {
+            bool res = false;
+            Person toCompare = (Person)obj;
+            if (Name == toCompare.Name&&Age == toCompare.Age)
+            {
+                res = true;
+            }
+            return res;
+        }
     }
 }
