@@ -63,7 +63,7 @@ namespace MeasuringTempaturesExcercise
             Console.WriteLine("now im not... :(");
 
             //MessageBox
-            MessageBox.Show($"This temperature was measured Today: {DateTime.Now.ToString()}");
+            MessageBox.Show($"This temperature was measured Today: {DateTime.Now}");
 
         }
     }

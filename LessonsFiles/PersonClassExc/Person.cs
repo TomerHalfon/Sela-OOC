@@ -3,10 +3,10 @@ namespace PersonClassExc
 {
     class Person
     {
-        public int Age { get; set; }
-        public string Name { get; set; }
+        public int Age { get; private set; }
+        public string Name { get; private set; }
 
-        public Person(int age, string name)
+        public Person(string name, int age)
         {
             Age = age;
             Name = name;
@@ -14,7 +14,7 @@ namespace PersonClassExc
 
         public override string ToString()
         {
-            return $"Name: {Name} Age: {Age}";
+            return $"Name: {Name}, Age: {Age}";
         }
     }
 }

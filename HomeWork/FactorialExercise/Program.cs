@@ -12,7 +12,6 @@ namespace FactorialExercise
             {
                 return 1;
             }
-
             return num * FactorialRec(num - 1);
         }
 
