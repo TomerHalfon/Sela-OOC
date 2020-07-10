@@ -10,5 +10,6 @@ if you have any quastion about my code send me an email at Tomer.Halfon773@Gmail
 or just ask me in person*(Zoom)
 
 if ther's an issue with the code, fork it and make a pull request I'll review it as fast as I can!
+or if you don't now what the hell I'm talking about you can just post a bug report from the Issues Tab
 
 Hope it helps you understand the assigments better!
