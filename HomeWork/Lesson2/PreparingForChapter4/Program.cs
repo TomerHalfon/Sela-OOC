@@ -40,7 +40,7 @@ namespace PreparingForChapter4
             Console.WriteLine("Application Rectanagle\n" + applicationRectangle);
 
             //compare the two using rectangle IsSizeEqual
-            Console.WriteLine($"Comparing two Rectangles by size...");
+            Console.WriteLine("Comparing two Rectangles by size...");
             if (applicationRectangle.IsSizeEqual(userRectangle))
             {
                 Console.WriteLine("Equal");
@@ -58,7 +58,7 @@ namespace PreparingForChapter4
             applicationRectangle.Assign(userRectangle);
 
             //Compare the two using overriden Equals method(compares data)
-            Console.WriteLine($"Comparing two Rectangles using Equals method...");
+            Console.WriteLine("Comparing two Rectangles using Equals method...");
             if (applicationRectangle.Equals(userRectangle))
             {
                 Console.WriteLine("Equal");
