@@ -48,7 +48,7 @@ namespace TypeClass
                 Console.WriteLine("obj is of type Person");
             }
 
-            //create a diffrent clas obj
+            //create a diffrent class obj
             Book book = new Book("Book", 150);
 
             //use the Equals method
