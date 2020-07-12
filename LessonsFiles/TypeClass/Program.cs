@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TypeClass
 {
@@ -37,23 +33,20 @@ namespace TypeClass
             //it is VERY dangerous to (cast) any object, 
             //because it's possible to use objects which are the derived class and store them in the base format.
             //for example
-            object obj1 = new Book("Book", 150);
+            object obj = new Book("Book", 150);
 
             //this code is bad and will cause an Exaption
-            //Person p3 = (Person)obj1;
+            //Person p3 = (Person)obj;
 
             //Therefore it's a best practice to verify it's type before you DownCast(cast)
-            if (obj1.GetType() == typeof(Person))
+            if (obj.GetType() == typeof(Person))
             {
                 //only now we can DownCast
-                Person p3 = (Person)obj1;
+                Person p3 = (Person)obj;
             }
 
-            //create a diffrent class obj
-            Book book = new Book("Book", 150);
-
             //use the Equals method
-            Console.WriteLine($"is book Equals to P1? {p1.Equals(book)}");
+            Console.WriteLine($"is p1 Equals to obj? {p1.Equals(obj)}");
             Console.WriteLine($"is p1 Equals to p2? {p1.Equals(p2)}\n");
         }
     }

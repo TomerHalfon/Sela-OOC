@@ -79,10 +79,10 @@ namespace PreparingForChapter4
             Rectangle otherRec = (Rectangle)obj;
             return Width == otherRec.Width && Height == otherRec.Height;
         }
-        //returns a unique hash code based on the string representation of this rectangle
+        //returns a unique hash code based on the Equals criteria of this rectangle
         public override int GetHashCode()
         {
-            return ToString().GetHashCode();
+            return (Width + Height).GetHashCode();
         }
     }
 }

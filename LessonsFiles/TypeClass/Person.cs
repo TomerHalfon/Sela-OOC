@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TypeClass
+﻿namespace TypeClass
 {
    public class Person
     {
@@ -43,6 +37,12 @@ namespace TypeClass
             //if the types don't match(therefore they can't be equal and so we can skip some processing)
             //return false if res wasn't changed
             return res;
+        }
+
+        //get the hash code of the ToString of the obj, becasue we've overriden Equals to compare all of the members
+        public override int GetHashCode()
+        {
+            return ToString().GetHashCode();
         }
     }
 }
