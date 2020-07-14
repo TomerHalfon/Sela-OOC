@@ -27,8 +27,7 @@ namespace PersonClassExc
 
             //print how many instances of Class Person were created using the static property
             //(notice we can only get the value, we can't change it from outside of the class)
-            Console.WriteLine($"We created {Person.personCount} diffrent instances of class Person");
-
+            Console.WriteLine($"We created {Person.PersonCount} diffrent instances of class Person");
         }
     }
 }

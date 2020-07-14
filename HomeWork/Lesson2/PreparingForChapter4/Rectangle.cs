@@ -82,8 +82,7 @@ namespace PreparingForChapter4
         //returns a unique hash code based on the Equals criteria of this rectangle
         public override int GetHashCode()
         {
-            double res = (Width / Height);
-            return res.GetHashCode();
+            return $"{Width}{Height}".GetHashCode();
         }
     }
 }
