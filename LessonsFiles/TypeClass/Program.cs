@@ -1,4 +1,5 @@
-﻿using System;
+﻿// The relevant documentation : https://docs.microsoft.com/en-us/dotnet/api/system.type?view=netcore-3.1
+using System;
 
 namespace TypeClass
 {

@@ -49,7 +49,7 @@ namespace PreparingForChapter4
             {
                 Console.WriteLine("not Equal");
             }
-
+            
             //print the smaller Rectangle
             Console.WriteLine($"The minimal rectangle is {applicationRectangle.Minimum(userRectangle)}");
 

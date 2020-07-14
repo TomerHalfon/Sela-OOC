@@ -1,5 +1,4 @@
-﻿
-namespace PersonClassExc
+﻿namespace PersonClassExc
 {
     class Person
     {
@@ -13,7 +12,7 @@ namespace PersonClassExc
         public string Name { get; private set; }
         public int Age { get; private set; }
 
-        //Full constructor with default age value
+        //Full constructor with a default age value
         public Person(string name, int age = 30)
         {
             Name = name;

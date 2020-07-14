@@ -1,4 +1,7 @@
-﻿using System;
+﻿// The relevant documentation
+//String format method:  https://docs.microsoft.com/en-us/dotnet/api/system.string.format?view=netcore-3.1
+//culture info class: https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=netcore-3.1
+using System;
 using System.Globalization;
 using System.Threading;
 namespace StringFormating
