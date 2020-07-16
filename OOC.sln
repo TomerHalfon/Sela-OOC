@@ -37,6 +37,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lesson4", "Lesson4", "{B74D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapesExercise", "HomeWork\Lesson4\ShapesExercise\ShapesExercise.csproj", "{4B9A67E9-A469-465C-B47A-26A92726EC2C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Async", "Practice\Async\Async.csproj", "{7E9335F6-37FE-4F49-8F87-C8F3C20016BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{4B9A67E9-A469-465C-B47A-26A92726EC2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B9A67E9-A469-465C-B47A-26A92726EC2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B9A67E9-A469-465C-B47A-26A92726EC2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E9335F6-37FE-4F49-8F87-C8F3C20016BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E9335F6-37FE-4F49-8F87-C8F3C20016BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E9335F6-37FE-4F49-8F87-C8F3C20016BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E9335F6-37FE-4F49-8F87-C8F3C20016BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -106,6 +112,7 @@ Global
 		{EB6DC3D8-4F0A-47C0-A029-70A235D13CC5} = {C68A9B1F-F7EE-4341-BEDF-8BB4B07E527A}
 		{B74D2254-B83E-4104-8E8B-C1FF8932C4EF} = {2EF54483-40CD-4F37-9731-A2B2545521BD}
 		{4B9A67E9-A469-465C-B47A-26A92726EC2C} = {B74D2254-B83E-4104-8E8B-C1FF8932C4EF}
+		{7E9335F6-37FE-4F49-8F87-C8F3C20016BC} = {63710FF2-33FD-42AD-B5DA-5112C5E03343}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9B659EE0-8295-4F2C-993B-B01FD2B56752}

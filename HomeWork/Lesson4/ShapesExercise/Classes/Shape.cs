@@ -8,13 +8,17 @@ namespace ShapesExercise.Classes
 {
     abstract class Shape
     {
+        // a string representation of the shape
         public string Name { get; private set; }
+
+        //the X/Y position of the shape (can also be a simple x and y vars)
         private Point _position;
         public Point Position
         {
             get { return _position; }
             protected set { _position = value; }
         }
+
         public Shape(Point position,string name)
         {
             Position = position;
