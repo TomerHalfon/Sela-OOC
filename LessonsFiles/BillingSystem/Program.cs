@@ -8,8 +8,8 @@ namespace BillingSystemExc
         static void Main()
         {
             Customer c1 = new Customer("P1");
-            Customer c2 = new Customer("P2", 100d);
-            Customer c3 = new Customer("P2", 100d);
+            Customer c2 = new Customer("P2", 200d);
+            Customer c3 = new Customer("P3", 300d);
             BillingSystem billingSystem = new BillingSystem(2);
             billingSystem.AddCustomer(c1);
             billingSystem.AddCustomer(c2);

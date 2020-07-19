@@ -45,10 +45,14 @@ namespace BillingSystemExc.Classes
                 sb.AppendLine(_customers[i].ToString());
             }
             //option 2 (foreach)
+            /*using a foreach is limited, wd have to run through all of the array
+             * in this case we can't use the tostring function on a null object.
+             */
             //foreach (Customer customer in _customers)
             //{
             //    //we can't operate on a null object, so to filter all of the null operations on the array we can use the null-conditional operator '?.'
             //    //which means that if the object is null it will simply return null, if it isn't null it will execute the operation. a refrence to docs at the top
+            //    //this is ok since AppendLine can take null objects.
             //    sb.AppendLine(customer?.ToString());
             //}
             return sb.ToString();
