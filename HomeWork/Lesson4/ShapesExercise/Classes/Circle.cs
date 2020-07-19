@@ -55,10 +55,7 @@ namespace ShapesExercise.Classes
         }
         public override string Print()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine(base.Print());
-            sb.AppendLine($"It's Radius is {Radius}");
-            return sb.ToString();
+            return $"{base.Print()}\nIt's Radius is {Radius}"; 
         }
     }
 }

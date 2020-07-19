@@ -64,10 +64,7 @@ namespace ShapesExercise.Classes
         //will use the base print but add to it the rectangle specific data
         public override string Print()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine(base.Print());
-            sb.AppendLine($"It's Width is: {Width}, and it's Height is: {Height}");
-            return sb.ToString();
+            return $"{base.Print()}\nIt's Width is: {Width}, and it's Height is: {Height}";
         }
     }
 }
