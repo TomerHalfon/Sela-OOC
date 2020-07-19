@@ -9,7 +9,10 @@ namespace BillingSystemExc.Classes
 {
     class RegularCustomer : Customer
     {
-        public RegularCustomer(string name, double balance = 0) : base(name, balance)
+        public RegularCustomer(string name, double balance) : base(name, balance)
+        {
+        }
+        public RegularCustomer(string name):base(name)
         {
         }
         //abstract function implementation

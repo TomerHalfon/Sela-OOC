@@ -36,6 +36,7 @@ namespace BillingSystemExc
 
             //print the system after change
             Console.WriteLine(billingSystem);
+            
         }
     }
 }

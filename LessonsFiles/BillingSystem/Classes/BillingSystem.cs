@@ -8,13 +8,14 @@ namespace BillingSystemExc.Classes
 {
     class BillingSystem
     {
+        const int defaultSize = 100;
         //An array of customers
         private Customer[] _customers;
         //An index to know where to write to the array
         private int _customersIndex;
 
         //The default value for the size of the array is 100
-        public BillingSystem(int customersAmount = 100)
+        public BillingSystem(int customersAmount = defaultSize)
         {
             _customers = new Customer[customersAmount];
             _customersIndex = 0;
