@@ -1,6 +1,6 @@
-﻿namespace BillingSystem.Classes
+﻿namespace BillingSystemExc.Classes
 {
-    class Customer
+    public class Customer
     {
         // static counter
         public static int CustomerCount { get; private set; } = 0;

@@ -1,7 +1,7 @@
-﻿using BillingSystem.Classes;
+﻿using BillingSystemExc.Classes;
 using System;
 
-namespace BillingSystem
+namespace BillingSystemExc
 {
     class Program
     {
@@ -9,10 +9,13 @@ namespace BillingSystem
         {
             Customer c1 = new Customer("P1");
             Customer c2 = new Customer("P2", 100d);
-
-            Console.WriteLine(c1);
-            Console.WriteLine(c2);
-            Console.WriteLine(Customer.CustomerCount);
+            Customer c3 = new Customer("P2", 100d);
+            BillingSystem billingSystem = new BillingSystem(2);
+            billingSystem.AddCustomer(c1);
+            billingSystem.AddCustomer(c2);
+            billingSystem.AddCustomer(c3);
+            Console.Write(billingSystem);
+            
         }
     }
 }
