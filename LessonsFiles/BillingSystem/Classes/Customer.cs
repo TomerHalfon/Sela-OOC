@@ -1,6 +1,6 @@
 ﻿namespace BillingSystemExc.Classes
 {
-    public class Customer
+    abstract class Customer
     {
         // static counter
         public static int CustomerCount { get; private set; } = 0;
@@ -14,7 +14,7 @@
         public double Balance
         {
             get { return _balance; }
-            private set { _balance = value; }
+            protected set { _balance = value; }
         }
 
         //full constructor with default parameter balance
@@ -24,6 +24,10 @@
             Balance = balance;
             Id = ++CustomerCount;
         }
+        //an abstract function decleration, will be implemented by the derived class
+        //no need for a specific default
+        public abstract void AddToBalance(double amount);
+
         public override string ToString()
         {
             return $"Id: {Id}, Name: {Name}, Balance: {Balance}";

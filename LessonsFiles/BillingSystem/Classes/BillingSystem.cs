@@ -57,5 +57,16 @@ namespace BillingSystemExc.Classes
             //}
             return sb.ToString();
         }
+
+        //will add to every customer an amount.
+        //each type will have diffrent logic to calculate the exact amount
+        public void UpdateBalance(double amount)
+        {
+            for (int i = 0; i < _customersIndex; i++)
+            {
+                //there is no fear of getting a null cell, since we loop up to the index
+                _customers[i].AddToBalance(amount);
+            }
+        }
     }
 }
