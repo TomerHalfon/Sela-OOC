@@ -6,7 +6,7 @@ namespace ShapesExercise
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             //Create the Shapes
             Rectangle r = new Rectangle(new Point(1.2, 3.3), 10, 5);
@@ -14,26 +14,30 @@ namespace ShapesExercise
 
             //print the shapes
             Console.WriteLine(r.Print());
+            Console.WriteLine();
             Console.WriteLine(c.Print());
 
             //resize the shapes
-            Console.WriteLine("Resizing the rectangle by 50%...");
+            Console.WriteLine("\nResizing the rectangle by 50%...");
             r.Resize(0.5);
             Console.WriteLine("Resizing the Circle by 20%...\n");
             c.Resize(0.2);
 
             //print the shapes
             Console.WriteLine(r.Print());
+            Console.WriteLine();
             Console.WriteLine(c.Print());
 
             //move the shapes
-            Console.WriteLine("Moving the Rectangle by 20 in the x axis...");
+            Console.WriteLine("\nMoving the Rectangle by 20 in the x axis...");
             r.Move(20);
-            Console.WriteLine("Moving the Circle by 20 in both axis...");
+            Console.WriteLine("Moving the Circle by 20 in both axis...\n");
             c.Move(20,20);
 
-            Console.WriteLine($"\n{r}");
-            Console.WriteLine(c);
+            //print the shapes
+            Console.WriteLine(r.Print());
+            Console.WriteLine();
+            Console.WriteLine(c.Print());
         }
     }
 }
