@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PersonClassExc.Enums;
+using System;
 
 namespace PersonClassExc
 {
@@ -7,11 +8,11 @@ namespace PersonClassExc
         static void Main()
         {
             //create person with full constructor
-            Person person1 = new Person("Person1", 27);
-            Person person2 = new Person("Person2", 26);
+            Person person1 = new Person("Person1", Months.April, 27);
+            Person person2 = new Person("Person2", Months.September, 26);
 
             //create person with only one parameter (age defaults to 30)
-            Person person3 = new Person("Person3");
+            Person person3 = new Person("Person3",Months.November);
 
             //Print the People
             Console.WriteLine(person1);

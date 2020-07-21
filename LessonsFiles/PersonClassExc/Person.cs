@@ -1,4 +1,6 @@
-﻿namespace PersonClassExc
+﻿using PersonClassExc.Enums;
+
+namespace PersonClassExc
 {
     class Person
     {
@@ -11,12 +13,14 @@
         public int Id { get; }
         public string Name { get; private set; }
         public int Age { get; private set; }
+        public Months BirthMonth { get; private set; }
 
         //Full constructor with a default age value
-        public Person(string name, int age = 30)
+        public Person(string name,Months birthMonth ,int age = 30)
         {
             Name = name;
             Age = age;
+            BirthMonth = birthMonth;
 
             //increase the counter 
             ++PersonCount;
@@ -29,7 +33,7 @@
 
         public override string ToString()
         {
-            return $"ID: {Id}, Name: {Name}, Age: {Age}";
+            return $"ID: {Id}, Name: {Name}, Age: {Age}, Born in {BirthMonth}";
         }
         
         public override bool Equals(object obj)
