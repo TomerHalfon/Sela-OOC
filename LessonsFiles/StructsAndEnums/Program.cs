@@ -19,8 +19,6 @@ namespace StructsAndEnums
                 case WeekDays.Saturday:
                     res = "WEEKEND!!!";
                     break;
-                default:
-                    break;
             }
             return res;
         }
@@ -54,7 +52,6 @@ namespace StructsAndEnums
             {
                 Console.WriteLine($"Day: {day}");
             }
-
 
             Console.WriteLine("\nEnter a day as shown above");
             WeekDays userDay;

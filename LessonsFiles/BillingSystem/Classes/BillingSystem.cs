@@ -1,6 +1,7 @@
 ﻿/*refrence to docs for null-conditional operator:
  * https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/member-access-operators#null-conditional-operators--and
  */
+using System;
 using System.Text;
 
 
@@ -8,6 +9,85 @@ namespace BillingSystemExc.Classes
 {
     class BillingSystem
     {
+        public Customer this[string name]
+        {
+            get
+            {
+                for (int i = 0; i < _customers.Length; i++)
+                {
+                    if (_customers[i].Name.Equals(name))
+                    {
+                        return _customers[i];
+                    }
+                }
+                return null;
+            }
+            set
+            {
+                for (int i = 0; i < _customers.Length; i++)
+                {
+                    if (_customers[i].Name.Equals(name))
+                    {
+                        _customers[i] = value;
+                    }
+                }
+            }
+        }
+        public Customer this[int id, string name]
+        {
+            get
+            {
+                for (int i = 0; i < _customers.Length; i++)
+                {
+                    if (_customers[i].Id.Equals(id))
+                    {
+                        if (_customers[i].Name.Equals(name))
+                        {
+                            return _customers[i];
+                        }
+                        else
+                        {
+                            throw new ArgumentException($"The name {name} is not the name of the customer with that ID {id}");
+                        }
+                    }
+                }
+                return null;
+            }
+            set
+            {
+                for (int i = 0; i < _customers.Length; i++)
+                {
+                    if (_customers[i].Id.Equals(id))
+                    {
+                        if (_customers[i].Name.Equals(name))
+                        {
+                            _customers[i] = value;
+                        }
+                        else
+                        {
+                            throw new ArgumentException($"The name {name} is not the name of the customer with that ID {id}");
+                        }
+                    }
+                }
+            }
+        }
+        public Customer this[int position]
+        {
+            get
+            {
+                return InRange(position) ? _customers[position] :
+                    throw new IndexOutOfRangeException($"{position} is not a valid index in the range, max {_customers.Length - 1} ");
+            }
+            set
+            {
+                if (!InRange(position))
+                {
+                    throw new IndexOutOfRangeException($"{position} is not a valid index in the range, max {_customers.Length - 1} ");
+                }
+                _customers[position] = value;
+            }
+        }
+
         const int defaultSize = 100;
         //An array of customers
         private Customer[] _customers;
@@ -25,10 +105,11 @@ namespace BillingSystemExc.Classes
         //if out of range do nothing (Assigment didn't specified)
         public void AddCustomer(Customer customer)
         {
-            if (_customersIndex < _customers.Length)
+            if (_customersIndex >= _customers.Length)
             {
-                _customers[_customersIndex++] = customer;
+                throw new IndexOutOfRangeException($"Max number of customers reached: {_customers.Length}");
             }
+            _customers[_customersIndex++] = customer;
         }
         //Returns a string of all of the customers
         public override string ToString()
@@ -68,6 +149,10 @@ namespace BillingSystemExc.Classes
                 //there is no fear of getting a null cell, since we loop up to the index
                 _customers[i].AddToBalance(amount);
             }
+        }
+        private bool InRange(int position)
+        {
+            return position >= 0 && position < _customers.Length;
         }
     }
 }
