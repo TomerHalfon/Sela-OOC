@@ -10,7 +10,7 @@ namespace BillingSystemExc
         static void Main()
         {
             //create a new billing system
-            BillingSystem billingSystem = new BillingSystem(2);
+            BillingSystem billingSystem = new BillingSystem(4);
 
             //create some customers
             RegularCustomer regularCustomer1 = new RegularCustomer("Customer1");
@@ -54,7 +54,9 @@ namespace BillingSystemExc
             {
                 Console.WriteLine($"Argument Exception !: {e.Message}");
             }
+
             billingSystem.Sort();
+            Console.WriteLine(billingSystem);
         }
     }
 }

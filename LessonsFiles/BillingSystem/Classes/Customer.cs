@@ -1,6 +1,8 @@
-﻿namespace BillingSystemExc.Classes
+﻿using System;
+
+namespace BillingSystemExc.Classes
 {
-    abstract class Customer
+    abstract class Customer: IComparable
     {
         // static counter
         public static int CustomerCount { get; private set; } = 0;
@@ -31,6 +33,25 @@
         public override string ToString()
         {
             return $"Id: {Id}, Name: {Name}, Balance: {Balance}";
+        }
+
+        public int CompareTo(object obj)
+        {
+            if (obj == null)
+            {
+                return 1;
+            }
+
+            Customer otherCustomer = obj as Customer;
+            if (otherCustomer != null)
+            {
+                return Balance.CompareTo(otherCustomer.Balance);
+            }
+
+            else
+            {
+                throw new ArgumentException($"{obj.GetType()} is not of type {GetType()}");
+            }
         }
     }
 }
