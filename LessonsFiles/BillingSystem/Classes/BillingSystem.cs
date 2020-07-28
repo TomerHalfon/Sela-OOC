@@ -4,6 +4,7 @@
 using BillingSystemExc.Exceptions;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Text;
 
 
@@ -11,6 +12,7 @@ namespace BillingSystemExc.Classes
 {
     class BillingSystem
     {
+        #region Indexers
         public Customer this[string name]
         {
             get
@@ -88,7 +90,9 @@ namespace BillingSystemExc.Classes
                 }
                 _customers[position] = value;
             }
-        }
+        } 
+        #endregion
+
         public int Length { get { return _customersIndex; } }
         const int defaultSize = 100;
         //An array of customers
@@ -114,20 +118,35 @@ namespace BillingSystemExc.Classes
             _customers[_customersIndex++] = customer;
         }
 
+        #region Sort
+        //uses a basic sort function from the array class.(using the Icomparable interface)
         public void Sort()
         {
             if (_customers != null)
             {
                 Array.Sort(_customers, 0, _customersIndex);
             }
+            else throw new NullReferenceException("can't sort a null billing system");
         }
+        //sort using the array class with spesific Icomparer
         public void Sort(IComparer comparer)
         {
             if (_customers != null)
             {
                 Array.Sort(_customers, comparer);
             }
+            else throw new NullReferenceException("can't sort a null billing system");
         }
+        ////sort using the array class with spesific Generic Icomparer
+        //public void Sort(IComparer<Customer> comparer)
+        //{
+        //    if (_customers != null)
+        //    {
+        //        Array.Sort(_customers, comparer);
+        //    }
+        //    else throw new NullReferenceException("can't sort a null billing system");
+        //}
+        #endregion
 
         //Returns a string of all of the customers
         public override string ToString()

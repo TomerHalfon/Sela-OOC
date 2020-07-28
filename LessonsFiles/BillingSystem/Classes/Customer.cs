@@ -2,7 +2,7 @@
 
 namespace BillingSystemExc.Classes
 {
-    abstract class Customer: IComparable
+    abstract class Customer: IComparable, IComparable<Customer>
     {
         // static counter
         public static int CustomerCount { get; private set; } = 0;
@@ -39,13 +39,22 @@ namespace BillingSystemExc.Classes
         {
             if (obj == null)
             {
-                return 1;
+                return -1;
             }
             if (obj is Customer otherCustomer)
             {
                 return Name.CompareTo(otherCustomer.Name);
             }
             throw new ArgumentException($"{obj.GetType()} is not of type {GetType()}");
+        }
+
+        public int CompareTo(Customer other)
+        {
+            if (other == null)
+            {
+                return -1;
+            }
+            return Name.CompareTo(other.Name);
         }
     }
 }
