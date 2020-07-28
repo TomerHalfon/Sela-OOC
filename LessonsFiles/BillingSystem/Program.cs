@@ -1,5 +1,7 @@
 ﻿using BillingSystemExc.Classes;
+using BillingSystemExc.Comparators;
 using BillingSystemExc.Exceptions;
+using BillingSystemExc.Interfaces;
 using System;
 
 namespace BillingSystemExc
@@ -55,8 +57,17 @@ namespace BillingSystemExc
                 Console.WriteLine($"Argument Exception !: {e.Message}");
             }
 
-            billingSystem.Sort();
+            billingSystem.Sort(new CompareCustomerByBalance());
             Console.WriteLine(billingSystem);
+
+            for (int i = 0; i < billingSystem.Length; i++)
+            {
+                if (!(billingSystem[i] is IAdressable adressable))
+                {
+                    continue;
+                }
+                Console.WriteLine(adressable.GetAdress());
+            }
         }
     }
 }

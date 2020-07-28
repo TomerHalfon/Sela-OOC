@@ -45,9 +45,13 @@
   <ItemGroup>
     <Compile Include="Classes\BillingSystem.cs" />
     <Compile Include="Classes\Customer.cs" />
+    <Compile Include="Classes\MarketingPerson.cs" />
     <Compile Include="Classes\RegularCustomer.cs" />
     <Compile Include="Classes\VIPCustomer.cs" />
+    <Compile Include="Comparators\CompareCustomerByBalance.cs" />
+    <Compile Include="Comparators\CompareCustomerByName.cs" />
     <Compile Include="Exceptions\TooManyCustomersException.cs" />
+    <Compile Include="Interfaces\IAdressable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

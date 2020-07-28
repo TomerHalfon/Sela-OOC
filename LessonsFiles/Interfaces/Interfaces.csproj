@@ -47,6 +47,7 @@
     <Compile Include="Dog.cs" />
     <Compile Include="IJumpable.cs" />
     <Compile Include="IMoveable.cs" />
+    <Compile Include="ISwimable.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

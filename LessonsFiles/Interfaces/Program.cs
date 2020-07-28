@@ -40,6 +40,11 @@ namespace Interfaces
             {
                 moveable.Move();
             }
+            Person person = new Person("Person", 30);
+            ISwimable swimable = person;
+            swimable.Move();
+            IMoveable moveable1 = person;
+            moveable1.Move();
         }
     }
 }

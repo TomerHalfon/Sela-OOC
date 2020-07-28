@@ -41,17 +41,11 @@ namespace BillingSystemExc.Classes
             {
                 return 1;
             }
-
-            Customer otherCustomer = obj as Customer;
-            if (otherCustomer != null)
+            if (obj is Customer otherCustomer)
             {
-                return Balance.CompareTo(otherCustomer.Balance);
+                return Name.CompareTo(otherCustomer.Name);
             }
-
-            else
-            {
-                throw new ArgumentException($"{obj.GetType()} is not of type {GetType()}");
-            }
+            throw new ArgumentException($"{obj.GetType()} is not of type {GetType()}");
         }
     }
 }

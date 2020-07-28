@@ -89,7 +89,7 @@ namespace BillingSystemExc.Classes
                 _customers[position] = value;
             }
         }
-
+        public int Length { get { return _customersIndex; } }
         const int defaultSize = 100;
         //An array of customers
         private Customer[] _customers;
@@ -119,6 +119,13 @@ namespace BillingSystemExc.Classes
             if (_customers != null)
             {
                 Array.Sort(_customers, 0, _customersIndex);
+            }
+        }
+        public void Sort(IComparer comparer)
+        {
+            if (_customers != null)
+            {
+                Array.Sort(_customers, comparer);
             }
         }
 
