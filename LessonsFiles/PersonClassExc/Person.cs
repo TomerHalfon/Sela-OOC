@@ -1,8 +1,9 @@
 ﻿using PersonClassExc.Enums;
+using System;
 
 namespace PersonClassExc
 {
-    class Person
+    class Person: IComparable
     {
         // PersonCount is a static property that holds a counter that we add to when we call the full constructor
         //(there's no need to initialize it in a separate static constructor, since there is no logic needed)
@@ -14,11 +15,13 @@ namespace PersonClassExc
         public string Name { get; private set; }
         public int Age { get; private set; }
         public Months BirthMonth { get; private set; }
+        public decimal Balance { get; private set; }
 
         //Full constructor with a default age value
-        public Person(string name,Months birthMonth ,int age = 30)
+        public Person(string name,Months birthMonth ,decimal balance = 0 ,int age = 30)
         {
             Name = name;
+            Balance = balance;
             Age = age;
             BirthMonth = birthMonth;
 
@@ -33,7 +36,7 @@ namespace PersonClassExc
 
         public override string ToString()
         {
-            return $"ID: {Id}, Name: {Name}, Age: {Age}, Born in {BirthMonth}";
+            return $"ID: {Id}, Name: {Name},Balance: {Balance}, Age: {Age}, Born in {BirthMonth}";
         }
         
         public override bool Equals(object obj)
@@ -63,6 +66,17 @@ namespace PersonClassExc
         {
             //since our equal condition is coparing only the Name and the Age properties. we dont care about the Id
             return $"{Name}{Age}".GetHashCode();
+        }
+
+        //the ICompareable implementatoin
+        public int CompareTo(object obj)
+        {
+            if (!(obj is Person otherPerson))
+            {
+                throw new ArgumentException($"{obj.GetType()} is not castable to {GetType()}");
+            }
+            //if they share the same name compare by id
+            return (!Name.Equals(otherPerson.Name)) ? Name.CompareTo(otherPerson.Name) : Id - otherPerson.Id;
         }
     }
 }

@@ -6,11 +6,16 @@ namespace BillingSystemExc.Classes
     class VIPCustomer : Customer, IAdressable
     {
         const double amountPrecent = 0.8;
-        string _adress;
-        public VIPCustomer(string name, double balance) : base(name, balance)
+        public VIPCustomer(string name, double balance) : base(name, balance:balance)
         {
         }
         public VIPCustomer(string name) : base(name)
+        {
+        }
+        public VIPCustomer(string name,string adress) : base(name,adress)
+        {
+        }
+        public VIPCustomer(string name, string adress, double balance) : base(name, adress, balance)
         {
         }
         //abstract function implementation
@@ -25,7 +30,7 @@ namespace BillingSystemExc.Classes
 
         public string GetAdress()
         {
-            return $"Adress: {_adress}";
+            return $"Adress: {Adress}";
         }
     }
 }

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{ED02431D-CF96-4EF0-AC0B-B21A8AFC87E0}</ProjectGuid>
+    <ProjectGuid>{A38A64B8-C8E2-4CCC-817F-1AD09AA1869E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>PersonClassExc</RootNamespace>
-    <AssemblyName>PersonClassExc</AssemblyName>
+    <RootNamespace>LambdaExc</RootNamespace>
+    <AssemblyName>LambdaExc</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,8 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Comparators\ComparePeopleByBalance.cs" />
-    <Compile Include="Enums\Months.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

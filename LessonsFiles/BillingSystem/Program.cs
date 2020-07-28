@@ -3,6 +3,7 @@ using BillingSystemExc.Comparators;
 using BillingSystemExc.Exceptions;
 using BillingSystemExc.Interfaces;
 using System;
+using System.Collections.Generic;
 
 namespace BillingSystemExc
 {
@@ -17,8 +18,8 @@ namespace BillingSystemExc
             //create some customers
             RegularCustomer regularCustomer1 = new RegularCustomer("Customer1");
             RegularCustomer regularCustomer2 = new RegularCustomer("Customer2",100.5);
-            VIPCustomer vIPCustomer1 = new VIPCustomer("Customer3");
-            VIPCustomer vIPCustomer2 = new VIPCustomer("Customer4",1000);
+            VIPCustomer vIPCustomer1 = new VIPCustomer("Customer3","Tel-Aviv");
+            VIPCustomer vIPCustomer2 = new VIPCustomer("Customer4", "Jerusalem", 1000);
 
             ////we can't create a Customer class instance
             //Customer customer = new Customer("Customer5");
@@ -29,8 +30,8 @@ namespace BillingSystemExc
             {
                 Console.WriteLine($"adding 4 customers");
                 billingSystem.AddCustomer(regularCustomer1);
-                billingSystem.AddCustomer(regularCustomer2);
                 billingSystem.AddCustomer(vIPCustomer1);
+                billingSystem.AddCustomer(regularCustomer2);
                 billingSystem.AddCustomer(vIPCustomer2);
             }
             catch (TooManyCustomersException e)
@@ -57,8 +58,17 @@ namespace BillingSystemExc
                 Console.WriteLine($"Argument Exception !: {e.Message}");
             }
 
+            #region Sorting Exmp
+            Console.WriteLine("Sorting Customers by default Icomparer [by Id]");
+            billingSystem.Sort();
+            Console.WriteLine(billingSystem);
+            Console.WriteLine("Sorting Customers by a specified Icomparer [by balance]");
             billingSystem.Sort(new CompareCustomerByBalance());
             Console.WriteLine(billingSystem);
+            Console.WriteLine("Sorting Customers by a specified Icomparer [by name(Generic implementation)]");
+            billingSystem.Sort(new CompareCustomerByNameGeneric());
+            Console.WriteLine(billingSystem); 
+            #endregion
 
             for (int i = 0; i < billingSystem.Length; i++)
             {

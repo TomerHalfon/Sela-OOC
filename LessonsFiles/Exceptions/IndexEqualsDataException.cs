@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//Docs: 
+//Exception Class: https://docs.microsoft.com/en-us/dotnet/api/system.exception?view=netframework-4.7.2
+using System;
 
 namespace Exceptions
 {

@@ -1,5 +1,7 @@
-﻿/*refrence to docs for null-conditional operator:
+﻿/*Docs:
+ * refrence to docs for null-conditional operator:
  * https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/member-access-operators#null-conditional-operators--and
+ * Arrar.Sort: https://docs.microsoft.com/en-us/dotnet/api/system.array.sort?view=netcore-3.1
  */
 using BillingSystemExc.Exceptions;
 using System;
@@ -7,17 +9,18 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
-
 namespace BillingSystemExc.Classes
 {
     class BillingSystem
     {
+        const int defaultSize = 100;
+
         #region Indexers
         public Customer this[string name]
         {
             get
             {
-                for (int i = 0; i < _customers.Length; i++)
+                for (int i = 0; i < _customerIndex; i++)
                 {
                     if (_customers[i].Name.Equals(name))
                     {
@@ -28,7 +31,7 @@ namespace BillingSystemExc.Classes
             }
             set
             {
-                for (int i = 0; i < _customers.Length; i++)
+                for (int i = 0; i < _customerIndex; i++)
                 {
                     if (_customers[i].Name.Equals(name))
                     {
@@ -41,7 +44,7 @@ namespace BillingSystemExc.Classes
         {
             get
             {
-                for (int i = 0; i < _customers.Length; i++)
+                for (int i = 0; i < _customerIndex; i++)
                 {
                     if (_customers[i].Id.Equals(id))
                     {
@@ -59,7 +62,7 @@ namespace BillingSystemExc.Classes
             }
             set
             {
-                for (int i = 0; i < _customers.Length; i++)
+                for (int i = 0; i < _customerIndex; i++)
                 {
                     if (_customers[i].Id.Equals(id))
                     {
@@ -92,62 +95,30 @@ namespace BillingSystemExc.Classes
             }
         } 
         #endregion
+        public int Length { get { return _customerIndex; } }
 
-        public int Length { get { return _customersIndex; } }
-        const int defaultSize = 100;
         //An array of customers
         private Customer[] _customers;
         //An index to know where to write to the array
-        private int _customersIndex;
+        private int _customerIndex;
 
         //The default value for the size of the array is 100
         public BillingSystem(int customersAmount = defaultSize)
         {
             _customers = new Customer[customersAmount];
-            _customersIndex = 0;
+            _customerIndex = 0;
         }
 
         //Add a customer to the billing system's customersArray(by internal index)
         //if out of range do nothing (Assigment didn't specified)
         public void AddCustomer(Customer customer)
         {
-            if (_customersIndex >= _customers.Length)
+            if (_customerIndex >= _customers.Length)
             {
                 throw new TooManyCustomersException($"Max number of customers reached", _customers.Length);
             }
-            _customers[_customersIndex++] = customer;
+            _customers[_customerIndex++] = customer;
         }
-
-        #region Sort
-        //uses a basic sort function from the array class.(using the Icomparable interface)
-        public void Sort()
-        {
-            if (_customers != null)
-            {
-                Array.Sort(_customers, 0, _customersIndex);
-            }
-            else throw new NullReferenceException("can't sort a null billing system");
-        }
-        //sort using the array class with spesific Icomparer
-        public void Sort(IComparer comparer)
-        {
-            if (_customers != null)
-            {
-                Array.Sort(_customers, comparer);
-            }
-            else throw new NullReferenceException("can't sort a null billing system");
-        }
-        ////sort using the array class with spesific Generic Icomparer
-        //public void Sort(IComparer<Customer> comparer)
-        //{
-        //    if (_customers != null)
-        //    {
-        //        Array.Sort(_customers, comparer);
-        //    }
-        //    else throw new NullReferenceException("can't sort a null billing system");
-        //}
-        #endregion
-
         //Returns a string of all of the customers
         public override string ToString()
         {
@@ -158,7 +129,7 @@ namespace BillingSystemExc.Classes
             /* using a for loop insted will allow us to loop up to the index of the customers array
              *  in that way we can skip the null check and save on operating cost
              */
-            for (int i = 0; i < _customersIndex; i++)
+            for (int i = 0; i < _customerIndex; i++)
             {
                 //in here we now that we have writen data up to this index, so nothing will be null up to the index
                 sb.AppendLine(_customers[i].ToString());
@@ -176,17 +147,45 @@ namespace BillingSystemExc.Classes
             //}
             return sb.ToString();
         }
-
         //will add to every customer an amount.
         //each type will have diffrent logic to calculate the exact amount
         public void UpdateBalance(double amount)
         {
-            for (int i = 0; i < _customersIndex; i++)
+            for (int i = 0; i < _customerIndex; i++)
             {
                 //there is no fear of getting a null cell, since we loop up to the index
                 _customers[i].AddToBalance(amount);
             }
         }
+        #region Sort
+        //uses a basic sort function from the array class.(using the Icomparable interface)
+        public void Sort()
+        {
+            if (_customers != null)
+            {
+                Array.Sort(_customers);
+            }
+            else throw new NullReferenceException("can't sort a null billing system");
+        }
+        //sort using the array class with spesific Icomparer
+        public void Sort(IComparer comparer)
+        {
+            if (_customers != null)
+            {
+                Array.Sort(_customers, comparer);
+            }
+            else throw new NullReferenceException("can't sort a null billing system");
+        }
+        //sort using the array class with spesific Generic Icomparer
+        public void Sort(IComparer<Customer> comparer)
+        {
+            if (_customers != null)
+            {
+                Array.Sort(_customers, comparer);
+            }
+            else throw new NullReferenceException("can't sort a null billing system");
+        }
+        #endregion
         private bool InRange(int position)
         {
             return position >= 0 && position < _customers.Length;

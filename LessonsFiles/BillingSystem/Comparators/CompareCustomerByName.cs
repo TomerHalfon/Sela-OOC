@@ -1,6 +1,7 @@
-﻿using System;
+﻿//Docs: 
+// Icomparer: https://docs.microsoft.com/en-us/dotnet/api/system.collections.icomparer?view=netcore-3.1
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using BillingSystemExc.Classes;
 
 namespace BillingSystemExc.Comparators
@@ -15,10 +16,5 @@ namespace BillingSystemExc.Comparators
             }
             throw new ArgumentException($"{x.GetType()} is not of type {y.GetType()}");
         }
-        ////The generic Icomparer lets us 'skip' the type check, because we can only get a customer as a parameter
-        //public int Compare(Customer x, Customer y)
-        //{
-        //    return x.Name.CompareTo(y.Name);
-        //}
     }
 }

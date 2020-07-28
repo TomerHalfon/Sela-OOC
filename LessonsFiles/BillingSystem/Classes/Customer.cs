@@ -1,8 +1,11 @@
-﻿using System;
+﻿//Docs:
+//IComparable: https://docs.microsoft.com/en-us/dotnet/api/system.icomparable?view=netcore-3.1
+//IComparable<T>(Generics): https://docs.microsoft.com/en-us/dotnet/api/system.icomparable-1?view=netcore-3.1
+using System;
 
 namespace BillingSystemExc.Classes
 {
-    abstract class Customer: IComparable, IComparable<Customer>
+    abstract class Customer: IComparable/*, IComparable<Customer>*/
     {
         // static counter
         public static int CustomerCount { get; private set; } = 0;
@@ -13,6 +16,7 @@ namespace BillingSystemExc.Classes
         //read only Id, can only be initialized
         public int Id { get; }
         public string Name { get; private set; }
+        public string Adress { get; private set; }
         public double Balance
         {
             get { return _balance; }
@@ -20,9 +24,10 @@ namespace BillingSystemExc.Classes
         }
 
         //full constructor with default parameter balance
-        public Customer(string name, double balance = 0)
+        public Customer(string name, string adress = "", double balance = 0)
         {
             Name = name;
+            Adress = adress;
             Balance = balance;
             Id = ++CustomerCount;
         }
@@ -35,6 +40,8 @@ namespace BillingSystemExc.Classes
             return $"Id: {Id}, Name: {Name}, Balance: {Balance}";
         }
 
+        #region IComperable Implementation
+        //The non Generic implementation of IComperable
         public int CompareTo(object obj)
         {
             if (obj == null)
@@ -43,18 +50,20 @@ namespace BillingSystemExc.Classes
             }
             if (obj is Customer otherCustomer)
             {
-                return Name.CompareTo(otherCustomer.Name);
+                return Id - otherCustomer.Id;
             }
             throw new ArgumentException($"{obj.GetType()} is not of type {GetType()}");
         }
 
-        public int CompareTo(Customer other)
-        {
-            if (other == null)
-            {
-                return -1;
-            }
-            return Name.CompareTo(other.Name);
-        }
+        //// The Generic implementation of IComparable
+        //public int CompareTo(Customer other)
+        //{
+        //    if (other == null)
+        //    {
+        //        return -1;
+        //    }
+        //    return Id - other.Id;
+        //} 
+        #endregion
     }
 }
