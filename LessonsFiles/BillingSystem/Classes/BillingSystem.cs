@@ -1,6 +1,7 @@
 ﻿/*refrence to docs for null-conditional operator:
  * https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/member-access-operators#null-conditional-operators--and
  */
+using BillingSystemExc.Exceptions;
 using System;
 using System.Text;
 
@@ -107,10 +108,19 @@ namespace BillingSystemExc.Classes
         {
             if (_customersIndex >= _customers.Length)
             {
-                throw new IndexOutOfRangeException($"Max number of customers reached: {_customers.Length}");
+                throw new TooManyCustomersException($"Max number of customers reached", _customers.Length);
             }
             _customers[_customersIndex++] = customer;
         }
+
+        public void Sort()
+        {
+            if (_customers != null)
+            {
+                Array.Sort(_customers, 0, _customersIndex);
+            }
+        }
+
         //Returns a string of all of the customers
         public override string ToString()
         {
