@@ -16,6 +16,8 @@ namespace CounterEvent
             c1.tickUp();
             c1.tickUp();
             c1.tickDown();
+            
+            
 
         }
     }
