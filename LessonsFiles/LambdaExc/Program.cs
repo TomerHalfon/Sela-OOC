@@ -22,14 +22,14 @@ namespace LambdaExc
             PrintList(people);
 
             // using FindAll find all people whose Age is greater or equal to 20
-            List<Person> subList = people.FindAll(p => { return p.Age >= 20; });
+            List<Person> subList = people.FindAll(p => p.Age >= 20);
             Console.WriteLine("People with Age greater or equal to 20: ");
             Console.WriteLine("--------------");
             PrintList(subList);
 
 
             // try : Find all people with Name != Yossi
-            List<Person> subList2 = people.FindAll(p => { return !p.Name.Equals("Yossi"); });
+            List<Person> subList2 = people.FindAll(p => !p.Name.Equals("Yossi"));
             Console.WriteLine("People with Name != Yossi: ");
             Console.WriteLine("---------------------------");
             PrintList(subList2);
@@ -43,7 +43,7 @@ namespace LambdaExc
 
 
             // try: Find the max Age of all people,  use Max
-            int a = people.Max(x => { return x.Age; });
+            int a = people.Max(x => x.Age);
             Console.WriteLine("Person with Max Age");
             Console.WriteLine("--------------------");
             Console.WriteLine("The age of the oldest person is: " + a);
