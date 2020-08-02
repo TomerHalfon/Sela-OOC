@@ -3,6 +3,7 @@
  * https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/member-access-operators#null-conditional-operators--and
  * Arrar.Sort: https://docs.microsoft.com/en-us/dotnet/api/system.array.sort?view=netcore-3.1
  */
+using BillingSystemExc.CustomEventArgs;
 using BillingSystemExc.Exceptions;
 using System;
 using System.Collections;
@@ -11,9 +12,12 @@ using System.Text;
 
 namespace BillingSystemExc.Classes
 {
-    class BillingSystem
+    delegate void UnreasonableCustomerBalanceHandler(Customer customer, UnreasonableCustomerBalanceEventArgs e);
+    delegate void CustomerAction(Customer customer);
+    class BillingSystem :IEnumerable
     {
         const int defaultSize = 100;
+        public event UnreasonableCustomerBalanceHandler OnUnreasonableCustomerBalance;
 
         #region Indexers
         public Customer this[string name]
@@ -157,6 +161,18 @@ namespace BillingSystemExc.Classes
                 _customers[i].AddToBalance(amount);
             }
         }
+        public void DoToAllCustomers(CustomerAction action)
+        {
+            foreach (Customer customer in _customers)
+            {
+                action.Invoke(customer);
+                if (customer.Balance >= 1000000)
+                {
+                    UnreasonableCustomerBalanceEventArgs args = new UnreasonableCustomerBalanceEventArgs(customer.Balance);
+                    OnUnreasonableCustomerBalance?.Invoke(customer, args);
+                }
+            }
+        }
         #region Sort
         //uses a basic sort function from the array class.(using the Icomparable interface)
         public void Sort()
@@ -189,6 +205,11 @@ namespace BillingSystemExc.Classes
         private bool InRange(int position)
         {
             return position >= 0 && position < _customers.Length;
+        }
+        //Will allow to Iterate on the billing system
+        public IEnumerator GetEnumerator()
+        {
+            return _customers.GetEnumerator();
         }
     }
 }

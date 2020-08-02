@@ -36,8 +36,7 @@ namespace DelegateEmployeesExc
             Console.WriteLine("\nSorting...");
 
             //using a declared function
-            CompareBy compare = new CompareBy(CompareBySalary);
-            manager.Sort(compare);
+            manager.Sort(CompareBySalary);
             manager.Print();
         }
     }

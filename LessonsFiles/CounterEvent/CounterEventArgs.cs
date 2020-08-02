@@ -8,7 +8,7 @@ namespace CounterEvent
 {
     public class CounterEventArgs : EventArgs
     {
-        public int CounterValue { get; set; }
+        public int CounterValue { get; }
         public CounterEventArgs(int counterValue)
         {
             CounterValue = counterValue;

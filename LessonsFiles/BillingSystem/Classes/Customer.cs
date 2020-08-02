@@ -1,6 +1,7 @@
 ﻿//Docs:
 //IComparable: https://docs.microsoft.com/en-us/dotnet/api/system.icomparable?view=netcore-3.1
 //IComparable<T>(Generics): https://docs.microsoft.com/en-us/dotnet/api/system.icomparable-1?view=netcore-3.1
+using BillingSystemExc.CustomEventArgs;
 using System;
 
 namespace BillingSystemExc.Classes
@@ -20,7 +21,10 @@ namespace BillingSystemExc.Classes
         public double Balance
         {
             get { return _balance; }
-            protected set { _balance = value; }
+            protected set 
+            {
+                _balance = value;
+            }
         }
 
         //full constructor with default parameter balance

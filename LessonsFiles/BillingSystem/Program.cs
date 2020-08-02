@@ -78,6 +78,18 @@ namespace BillingSystemExc
                 }
                 Console.WriteLine(adressable.GetAdress());
             }
+
+            #region Exc #7
+            Random rnd = new Random();
+
+            CustomerService customerService = new CustomerService();
+            billingSystem.OnUnreasonableCustomerBalance += customerService.OnUnreasonableCustomerBalance;
+
+            AccountingClerk accountingClerk = new AccountingClerk();
+            billingSystem.OnUnreasonableCustomerBalance += accountingClerk.OnUnreasonableCustomerBalance;
+
+            billingSystem.DoToAllCustomers(c => { c.AddToBalance(rnd.Next(2000001)); }); 
+            #endregion
         }
     }
 }
