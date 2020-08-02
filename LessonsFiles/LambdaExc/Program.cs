@@ -1,8 +1,9 @@
-﻿using System;
+﻿//Docs:
+//Lambda: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/lambda-operator
+//Guide: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/lambda-expressions
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LambdaExc
 {
@@ -18,44 +19,41 @@ namespace LambdaExc
 
             Console.WriteLine("Original list");
             Console.WriteLine("--------------");
-            printList(people);
+            PrintList(people);
 
             // using FindAll find all people whose Age is greater or equal to 20
-            //List<Person> subList = ????????????????
+            List<Person> subList = people.FindAll(p => { return p.Age >= 20; });
             Console.WriteLine("People with Age greater or equal to 20: ");
             Console.WriteLine("--------------");
-            //printList(subList);
+            PrintList(subList);
 
 
             // try : Find all people with Name != Yossi
-            //List<Person> subList2 = ???????????????????????
+            List<Person> subList2 = people.FindAll(p => { return !p.Name.Equals("Yossi"); });
             Console.WriteLine("People with Name != Yossi: ");
             Console.WriteLine("---------------------------");
-            //printList(subList2);
+            PrintList(subList2);
 
 
             // try: Sort all people by Name using Sort method with comparison delegate
-
-            //people.Sort(????????????????????????);
+            people.Sort((x, y) => x.Name.CompareTo(y.Name));
             Console.WriteLine("People List Sorted By Name ");
             Console.WriteLine("---------------------------");
-            //printList(people);
+            PrintList(people);
 
 
             // try: Find the max Age of all people,  use Max
-
-            //int a = people.Max(??????????????????);
+            int a = people.Max(x => { return x.Age; });
             Console.WriteLine("Person with Max Age");
             Console.WriteLine("--------------------");
-            //Console.WriteLine("The age of the oldest person is: " + a);
+            Console.WriteLine("The age of the oldest person is: " + a);
 
             // try 
-
-            //Person firstOdd = people.First(???????????????????????????????);
-            //Console.WriteLine("first person with Age Whose odd number is: " + firstOdd);
+            Person firstOdd = people.First(p => p.Age % 2 != 0);
+            Console.WriteLine("first person with Age Whose odd number is: " + firstOdd);
 
         }
-        public static void printList(List<Person> list)
+        public static void PrintList(List<Person> list)
         {
             foreach (Person p in list)
                 Console.WriteLine(p);
