@@ -28,7 +28,7 @@ namespace DelegateEmployeesExc
             {
                 for (int j = 0; j < _employees.Count - 1; j++)
                 {
-                    if (compareBy(_employees[j], _employees[j+1]) == 1)
+                    if (compareBy.Invoke(_employees[j], _employees[j+1]) == 1)
                     {
                         var tmp = _employees[j];
                         _employees[j] = _employees[j + 1];
