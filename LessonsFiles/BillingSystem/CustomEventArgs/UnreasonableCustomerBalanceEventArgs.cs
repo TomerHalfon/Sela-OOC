@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace BillingSystemExc.CustomEventArgs
 {
-   class UnreasonableCustomerBalanceEventArgs:EventArgs
+    class UnreasonableCustomerBalanceEventArgs : EventArgs
     {
+        public double Balance { get; }
+
         public UnreasonableCustomerBalanceEventArgs(double balance)
         {
             Balance = balance;
         }
-
-        public double Balance { get; }
     }
 }

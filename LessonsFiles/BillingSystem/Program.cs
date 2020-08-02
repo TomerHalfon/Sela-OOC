@@ -84,7 +84,7 @@ namespace BillingSystemExc
 
             CustomerService customerService = new CustomerService();
             billingSystem.OnUnreasonableCustomerBalance += customerService.OnUnreasonableCustomerBalance;
-
+            
             AccountingClerk accountingClerk = new AccountingClerk();
             billingSystem.OnUnreasonableCustomerBalance += accountingClerk.OnUnreasonableCustomerBalance;
 

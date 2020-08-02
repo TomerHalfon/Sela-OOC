@@ -103,6 +103,7 @@ namespace BillingSystemExc.Classes
 
         //An array of customers
         private Customer[] _customers;
+
         //An index to know where to write to the array
         private int _customerIndex;
 
@@ -123,6 +124,7 @@ namespace BillingSystemExc.Classes
             }
             _customers[_customerIndex++] = customer;
         }
+
         //Returns a string of all of the customers
         public override string ToString()
         {
@@ -151,6 +153,7 @@ namespace BillingSystemExc.Classes
             //}
             return sb.ToString();
         }
+
         //will add to every customer an amount.
         //each type will have diffrent logic to calculate the exact amount
         public void UpdateBalance(double amount)
@@ -161,6 +164,8 @@ namespace BillingSystemExc.Classes
                 _customers[i].AddToBalance(amount);
             }
         }
+
+        //will do an action on all of the customers
         public void DoToAllCustomers(CustomerAction action)
         {
             foreach (Customer customer in _customers)
@@ -173,6 +178,7 @@ namespace BillingSystemExc.Classes
                 }
             }
         }
+
         #region Sort
         //uses a basic sort function from the array class.(using the Icomparable interface)
         public void Sort()
@@ -202,14 +208,18 @@ namespace BillingSystemExc.Classes
             else throw new NullReferenceException("can't sort a null billing system");
         }
         #endregion
-        private bool InRange(int position)
-        {
-            return position >= 0 && position < _customers.Length;
-        }
+
         //Will allow to Iterate on the billing system
         public IEnumerator GetEnumerator()
         {
             return _customers.GetEnumerator();
         }
+
+        private bool InRange(int position)
+        {
+            return position >= 0 && position < _customers.Length;
+        }
+
+
     }
 }

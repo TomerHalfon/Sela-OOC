@@ -10,7 +10,7 @@ namespace BillingSystemExc.Classes
     {
         public void OnUnreasonableCustomerBalance(Customer customer, CustomEventArgs.UnreasonableCustomerBalanceEventArgs e)
         {
-            Console.WriteLine($"Telling the CFO about {customer}...");
+            Console.WriteLine($"AccountingClerk is telling the CFO about {customer.Name}, it's balance is {e.Balance}...");
         }
     }
 
