@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comparators\ComparePeopleByBalance.cs" />
+    <Compile Include="Comparators\GeneralPersonComparer.cs" />
     <Compile Include="Enums\Months.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />

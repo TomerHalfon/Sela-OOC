@@ -17,6 +17,15 @@ namespace DelegateEmployeesExc
             manager.Add(new Employee() { Name = "Tomer", Salary = 2000 });
 
             manager.Print();
+            Console.WriteLine("\nSorting...\n");
+            
+            //using lambada
+            manager.Sort((x, y) => { return x.Salary.CompareTo(y.Salary); });
+
+            //using anonymous decleration
+            manager.Sort(delegate(Employee x, Employee y) { return x.Name.CompareTo(y.Name);});
+
+            manager.Print();
         }
     }
 }

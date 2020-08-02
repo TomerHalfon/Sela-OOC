@@ -40,14 +40,30 @@ namespace PersonClassExc
             {
                 Console.WriteLine(person);
             }
-
             Console.WriteLine("\nSorting by balance...");
             Array.Sort(people, new ComparePeopleByBalance());
             foreach (Person person in people)
             {
                 Console.WriteLine(person);
             }
-
+            Console.WriteLine("\nSorting by Age...");
+            Array.Sort(people, new GeneralPersonComparer(PersonCompareMethod.ByAge));
+            foreach (Person person in people)
+            {
+                Console.WriteLine(person);
+            }
+            Console.WriteLine("\nSorting by BirthMonth...");
+            Array.Sort(people, new GeneralPersonComparer(PersonCompareMethod.ByBirthMonth));
+            foreach (Person person in people)
+            {
+                Console.WriteLine(person);
+            }
+            Console.WriteLine("\nSorting by ID...");
+            Array.Sort(people, new GeneralPersonComparer(PersonCompareMethod.ById));
+            foreach (Person person in people)
+            {
+                Console.WriteLine(person);
+            }
         }
     }
 }
