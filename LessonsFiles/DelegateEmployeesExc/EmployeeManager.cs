@@ -28,7 +28,7 @@ namespace DelegateEmployeesExc
             {
                 for (int j = 0; j < _employees.Count - 1; j++)
                 {
-                    if (compareBy.Invoke(_employees[j], _employees[j+1]) == 1)
+                    if (compareBy.Invoke(_employees[j], _employees[j + 1]) > 0) 
                     {
                         var tmp = _employees[j];
                         _employees[j] = _employees[j + 1];
@@ -37,7 +37,7 @@ namespace DelegateEmployeesExc
                 }
             }
         }
-#if false
+#if test
         // show how one can sort elements using simple non efficient sort
         public void SortByName()
         {
