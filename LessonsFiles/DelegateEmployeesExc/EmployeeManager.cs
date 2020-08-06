@@ -1,11 +1,13 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace DelegateEmployeesExc
 {
     delegate int CompareBy(Employee x, Employee y);
+    delegate void EmployeeAction(Employee employee);
 
-    class EmployeeManager
+    class EmployeeManager : IEnumerable<Employee>
     {
         private List<Employee> _employees = new List<Employee>();
 
@@ -36,6 +38,24 @@ namespace DelegateEmployeesExc
                     }
                 }
             }
+        }
+
+        public void ForeachAction(EmployeeAction action)
+        {
+            foreach (Employee employee in _employees)
+            {
+                action.Invoke(employee);
+            }
+        }
+
+        public IEnumerator<Employee> GetEnumerator()
+        {
+            return _employees.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return _employees.GetEnumerator();
         }
 #if test
         // show how one can sort elements using simple non efficient sort

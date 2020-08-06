@@ -50,8 +50,7 @@ namespace LambdaExc
 
             // try 
             Person firstOdd = people.First(p => p.Age % 2 != 0);
-            Console.WriteLine("first person with Age Whose odd number is: " + firstOdd);
-
+            Console.WriteLine("first person with Age Whose odd number is: " + firstOdd);            
         }
         public static void PrintList(List<Person> list)
         {

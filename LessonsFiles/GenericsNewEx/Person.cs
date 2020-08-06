@@ -1,6 +1,6 @@
 ﻿namespace GenericsNewEx
 {
-    class Person
+   public class Person
     {
         public Person(string name, int age, int salary)
         {

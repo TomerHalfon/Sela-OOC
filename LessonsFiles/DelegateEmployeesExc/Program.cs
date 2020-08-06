@@ -13,6 +13,10 @@ namespace DelegateEmployeesExc
         {
             return x.Salary.CompareTo(y.Salary);
         }
+        static void PrintEmployee(Employee employee)
+        {
+            Console.WriteLine(employee);
+        }
         static void Main()
         {
             EmployeeManager manager = new EmployeeManager();
@@ -38,6 +42,10 @@ namespace DelegateEmployeesExc
             //using a declared function
             manager.Sort(CompareBySalary);
             manager.Print();
+
+            //
+            EmployeeAction employeeAction = new EmployeeAction(PrintEmployee);
+            manager.ForeachAction(employeeAction);
         }
     }
 }
