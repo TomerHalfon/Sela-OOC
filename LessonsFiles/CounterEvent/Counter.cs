@@ -21,7 +21,7 @@ namespace CounterEvent
         // Students --- Add an event member so that clients could register
         //  on it. The event member type is of the delegate defined above.
         public event CounterHandler OnCounterEvent;
-
+        
         public Counter(int startVal = 0) { CountedValue = startVal; }
         public int CountedValue { get; private set; }
         public void tickUp()
@@ -46,6 +46,5 @@ namespace CounterEvent
             //     is the counter, and the EventArgs is the one you prepared above
             OnCounterEvent.Invoke(this, counterEventArgs);
         }
-
     }
 }
